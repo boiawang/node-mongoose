@@ -1,0 +1,28 @@
+<% include head %>
+
+<body>
+	<form method="post" action="/create">
+		<div>
+			<label for="username">用户名</label>
+			<input name="username" id="username" />
+		</div>
+		<div>
+			<label for="email">邮箱</label>
+			<input name="email" id="email" />
+		</div>
+		<div>
+			<label for="comment">评论</label>
+			<textarea name="comment" id="comment" ></textarea>
+		</div>
+		<input type="submit" />
+	</form>
+
+	<% for(var i=0;i<users.length;i++){ %>
+		<div class="">
+			<span class="name"><%= users[i].username %></span>
+			<%= users[i].content %>
+			<%= users[i].time %>
+			<button class="delete-user-btn">删除</button>
+		</div>
+	<% } %>
+</body>

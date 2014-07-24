@@ -1,0 +1,18 @@
+{
+    "name": "node_mongoose",
+    "version": "0.0.1",
+    "private": true,
+    "email": "zhengwang2314@gmail.com",
+    "url": "www.boiajs.com",
+    "scripts": {
+        "start": "node app"
+    },
+    "dependencies": {
+        "express": "~4.2.0",
+        "mongoose": "*",
+        "body-parser": "~1.0.0",
+        "cookie-parser": "~1.0.1",
+        "debug": "~0.7.4",
+        "ejs": "~0.8.5"
+    }
+}
