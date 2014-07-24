@@ -12,16 +12,29 @@ exports.index = function(req, res) {
 };
 
 exports.create = function(req, res) {
-    var user = new User({
-        username: req.body.username,
-        email: req.body.email,
-        content: req.body.comment,
-        time: Date.now()
+    var userName = req.body.username;
+
+    User.findOne({username: userName},function(err,user){
+        if(!user){
+            user = new User({
+                username: req.body.username,
+                email: req.body.email,
+                content: req.body.comment
+            });
+
+                       
+        }else{
+            user.email = req.body.email;
+            user.content = req.body.comment;
+            user.time = Date.now();
+        }
+
+        user.save(function(err, user, count) {
+            res.redirect('/');
+            // res.send(user);
+        }); 
     });
 
-    user.save(function(err, user, count) {
-        res.redirect('/');
-    });
 },
 
 exports.delete = function(req, res) {

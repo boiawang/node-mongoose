@@ -12,7 +12,7 @@
 		</div>
 		<div>
 			<label for="comment">评论</label>
-			<textarea name="comment" id="comment" ></textarea>
+			<textarea name="comment" id="comment"  rows="6" cols="50"></textarea>
 		</div>
 		<input type="submit" />
 	</form>
@@ -20,8 +20,8 @@
 	<% for(var i=0;i<users.length;i++){ %>
 		<div class="">
 			<span class="name"><%= users[i].username %></span>
-			<%= users[i].content %>
-			<%= users[i].time %>
+			<span class="content"><%= users[i].content %></span>
+			<span><%= users[i].time %></span>
 			<button class="delete-user-btn">删除</button>
 		</div>
 	<% } %>

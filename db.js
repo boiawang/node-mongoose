@@ -3,7 +3,10 @@ var Schema = mongoose.Schema;
 
 //定义chat对象模型
 var UserSchema = new Schema({
-    username: String,
+    username: {
+    	type: String,
+    	unique: true
+    },
     email: String,
     content: String,
     time: {
